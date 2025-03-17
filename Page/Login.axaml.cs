@@ -17,14 +17,14 @@ public partial class Login : UserControl
 
     private void Button_Ok(object? sender, RoutedEventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Passsword.Text) || Remember.IsChecked == false)
+        if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Text) || Remember.IsChecked == false)
         {
             return;
         }
-        else if (Remember.IsChecked == true)
-        {
-            
-        }
+        // else if (Remember.IsChecked == true)
+        // {
+        //     
+        // }
         else
         {
             App.MainWindow.MyContent.Content = new Main();
@@ -36,11 +36,17 @@ public partial class Login : UserControl
         App.MainWindow.Close();
     }
 
-    private void Username_OnGotFocus(object? sender, GotFocusEventArgs e)
+
+    private void Password_OnGotFocus(object? sender, GotFocusEventArgs e)
     {
-        if (Remember.IsChecked == true)
+        if (true)
         {
-            
+            Password.PasswordChar = '*';
         }
+    }
+
+    private void Password_OnLostFocus(object? sender, RoutedEventArgs e)
+    {
+        Password.PasswordChar = '\0';
     }
 }

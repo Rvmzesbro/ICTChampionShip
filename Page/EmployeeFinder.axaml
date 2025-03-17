@@ -4,5 +4,40 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ICTChampionShip.Page.EmployeeFinder">
-    Welcome to Avalonia!
-</UserControl>
+    
+    <UserControl.Styles>
+        <StyleInclude Source="../EmployeeFinderStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <Grid ColumnDefinitions="* *" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid Grid.Column="0" Grid.RowDefinitions="* * * * *">
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="Departments"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <CheckBox Content="Admin"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <CheckBox Content="IT Helpdesk"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="3">
+                <CheckBox Content="Soles"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="4">
+                <CheckBox Content="Marketing"></CheckBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" RowDefinitions="Auto *">
+            <StackPanel Grid.Row="0">
+                <TextBox x:Name="Search" Classes="Search" Text="search employee" GotFocus="InputElement_OnGotFocus" LostFocus="InputElement_OnLostFocus"></TextBox>
+            </StackPanel>
+            <ScrollViewer Grid.Row="1">
+                <StackPanel>
+                    <ListBox>
+                        
+                    </ListBox>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl> 

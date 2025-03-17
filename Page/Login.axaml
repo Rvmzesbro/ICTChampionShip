@@ -12,11 +12,11 @@
     <Grid RowDefinitions="* * * *" ColumnDefinitions="* *" HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <TextBlock Text="Username" VerticalAlignment="Top"></TextBlock>
-            <TextBox x:Name="Username" Classes="UsernameBox" GotFocus="Username_OnGotFocus"></TextBox>
+            <TextBox x:Name="Username" Classes="UsernameBox"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <TextBlock Text="Password" VerticalAlignment="Top"></TextBlock>
-            <TextBox x:Name="Passsword" Classes="UsernameBox"></TextBox>
+            <TextBox x:Name="Password" Classes="UsernameBox" GotFocus="Password_OnGotFocus" LostFocus="Password_OnLostFocus"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
             <CheckBox x:Name="Remember"></CheckBox>

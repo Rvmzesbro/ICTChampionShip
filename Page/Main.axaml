@@ -13,7 +13,7 @@
         </StackPanel>
         <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                <ListBox></ListBox>
+                <ListBox SelectionChanged="SelectingItemsControl_OnSelectionChanged"></ListBox>
             </StackPanel>
         </ScrollViewer>
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">

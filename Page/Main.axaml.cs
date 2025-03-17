@@ -21,4 +21,9 @@ public partial class Main : UserControl
     {
         App.MainWindow.MyContent.Content = new EmployeeFinder();
     }
+
+    private void SelectingItemsControl_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
 }
