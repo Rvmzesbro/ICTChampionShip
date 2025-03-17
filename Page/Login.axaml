@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ICTChampionShip.Page.Login">
+
+    <UserControl.Styles>
+        <StyleInclude Source="../LoginWindowStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+
+    <Grid RowDefinitions="* * * *" ColumnDefinitions="* *" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="Username" VerticalAlignment="Top"></TextBlock>
+            <TextBox x:Name="Username" Classes="UsernameBox" GotFocus="Username_OnGotFocus"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="Password" VerticalAlignment="Top"></TextBlock>
+            <TextBox x:Name="Passsword" Classes="UsernameBox"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <CheckBox x:Name="Remember"></CheckBox>
+            <TextBlock Text="Remember me"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <Button Content="Ok" Click="Button_Ok"></Button>
+            <Button Content="Cancel" Click="Button_Cancel"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
