@@ -3,17 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="ICTChampionShip.Page.Main">
+             x:Class="ICTChampionShip.Page.Main"
+             xmlns:page="clr-namespace:ICTChampionShip"
+             x:DataType="page:MainWindow">
     <Grid RowDefinitions="* * * *" ColumnDefinitions="* *" HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <!-- <TextBlock Text="{Binding Employee.Name}"></TextBlock> -->
+            <TextBlock></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <TextBlock Text="Your open chatrooms"></TextBlock>
         </StackPanel>
         <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                <ListBox SelectionChanged="SelectingItemsControl_OnSelectionChanged"></ListBox>
+                <ListBox SelectionChanged="SelectingItemsControl_OnSelectionChanged" ItemsSource="{}"></ListBox>
             </StackPanel>
         </ScrollViewer>
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">

@@ -7,9 +7,9 @@ public partial class Member
 {
     public int? EmployeeId { get; set; }
 
-    public int? ChatroomeId { get; set; }
+    public int? ChatroomId { get; set; }
 
-    public virtual Chatroom? Chatroome { get; set; }
+    public virtual Chatroom? Chatroom { get; set; }
 
     public virtual Employee? Employee { get; set; }
 }

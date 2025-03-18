@@ -1,22 +1,28 @@
 using System;
 using System.ComponentModel;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using ICTChampionShip.Models;
 
 namespace ICTChampionShip.Page;
 
 public partial class Login : UserControl
 {
+    public Employee EmployeeContext { get; set; }
     public Login()
     {
         InitializeComponent();
+        EmployeeContext = new Employee();
     }
 
     private void Button_Ok(object? sender, RoutedEventArgs e)
     {
+        var username = Username.Text;
+        var password = Password.Text;
         if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Text) || Remember.IsChecked == false)
         {
             return;
@@ -27,7 +33,18 @@ public partial class Login : UserControl
         // }
         else
         {
-            App.MainWindow.MyContent.Content = new Main();
+            using (var db = new NewictContext())
+            {
+                EmployeeContext = db.Employees.FirstOrDefault(p => p.Username == username && p.Password == password);
+                if (EmployeeContext != null)
+                {
+                    App.MainWindow.MyContent.Content = new Main();
+                }
+                else
+                {
+                    
+                }
+            }
         }
     }
 

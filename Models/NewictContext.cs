@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ICTChampionShip.Models;
 
-public partial class IctContext : DbContext
+public partial class NewictContext : DbContext
 {
-    public IctContext()
+    public NewictContext()
     {
     }
 
-    public IctContext(DbContextOptions<IctContext> options)
+    public NewictContext(DbContextOptions<NewictContext> options)
         : base(options)
     {
     }
@@ -27,7 +27,7 @@ public partial class IctContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Username=ramzik;Password=1;Database=ICT");
+        => optionsBuilder.UseNpgsql("Host=localhost;Username=ramzik;Password=1;Database=NEWICT");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -105,12 +105,12 @@ public partial class IctContext : DbContext
         {
             entity.HasNoKey();
 
-            entity.Property(e => e.ChatroomeId).HasColumnName("chatroome_id");
+            entity.Property(e => e.ChatroomId).HasColumnName("chatroom_id");
             entity.Property(e => e.EmployeeId).HasColumnName("employee_id");
 
-            entity.HasOne(d => d.Chatroome).WithMany()
-                .HasForeignKey(d => d.ChatroomeId)
-                .HasConstraintName("Members_chatroome_id_fkey");
+            entity.HasOne(d => d.Chatroom).WithMany()
+                .HasForeignKey(d => d.ChatroomId)
+                .HasConstraintName("Members_chatroom_id_fkey");
 
             entity.HasOne(d => d.Employee).WithMany()
                 .HasForeignKey(d => d.EmployeeId)
