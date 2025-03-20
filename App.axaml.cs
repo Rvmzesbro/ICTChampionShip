@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using ICTChampionShip.Models;
+using ICTChampionShip.Page;
 
 namespace ICTChampionShip;
 

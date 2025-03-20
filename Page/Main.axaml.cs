@@ -11,13 +11,14 @@ public partial class Main : UserControl
 {
     public List<Chatroom> Chatrooms { get; set; } 
     public Employee EmployeeContext { get; set; }
-    public Main()
+    public Chatroom ChatroomContext { get; set; }
+    public Main(Employee employeeContext, Chatroom chatroomContext)
     {
         InitializeComponent();
         Chatrooms = App.dbContext.Chatrooms.ToList();
+        EmployeeContext = employeeContext;
         DataContext = this;
-        EmployeeContext = new Employee();
-
+        ChatroomContext = chatroomContext;
     }
 
     private void Button_CloseApplication(object? sender, RoutedEventArgs e)

@@ -9,7 +9,11 @@
         <StyleInclude Source="../EmployeeFinderStyle.axaml"></StyleInclude>
     </UserControl.Styles>
     
-    <Grid ColumnDefinitions="* *" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Grid.RowDefinitions="* * * * *">
             <StackPanel Grid.Row="0" Grid.Column="0">
                 <TextBlock Text="Departments"></TextBlock>

@@ -7,12 +7,14 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ICTChampionShip.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ICTChampionShip.Page;
 
 public partial class Login : UserControl
 {
     public Employee EmployeeContext { get; set; }
+    public Chatroom ChatroomContext { get; set; }
     public Login()
     {
         InitializeComponent();
@@ -23,14 +25,14 @@ public partial class Login : UserControl
     {
         var username = Username.Text;
         var password = Password.Text;
-        if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Text) || Remember.IsChecked == false)
+        if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Text))
         {
             return;
         }
-        // else if (Remember.IsChecked == true)
-        // {
-        //     
-        // }
+        else if (Remember.IsChecked == true)
+        {
+            
+        }
         else
         {
             using (var db = new NewictContext())
@@ -38,11 +40,11 @@ public partial class Login : UserControl
                 EmployeeContext = db.Employees.FirstOrDefault(p => p.Username == username && p.Password == password);
                 if (EmployeeContext != null)
                 {
-                    App.MainWindow.MyContent.Content = new Main();
+                    App.MainWindow.MyContent.Content = new Main(EmployeeContext, ChatroomContext);
                 }
                 else
                 {
-                    
+                    return;
                 }
             }
         }
@@ -64,6 +66,6 @@ public partial class Login : UserControl
 
     private void Password_OnLostFocus(object? sender, RoutedEventArgs e)
     {
-        Password.PasswordChar = '\0';
+        
     }
 }

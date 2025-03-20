@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ICTChampionShip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7ca6e0233d353570aee160b68e635c5fba7ffed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+332a58be88b8e81e19ee981636c582cf4181d022")]
 [assembly: System.Reflection.AssemblyProductAttribute("ICTChampionShip")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ICTChampionShip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
